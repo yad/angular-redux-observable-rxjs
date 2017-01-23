@@ -2,7 +2,7 @@
 
 export class Page1Controller{
     /*@ngInject*/
-    constructor() {
+    constructor($ngRedux) {
         this.value = 'xxxx';
         this.unsubscribe = $ngRedux.connect(this.mapStateToThis, CounterActions)(this);      
     }
