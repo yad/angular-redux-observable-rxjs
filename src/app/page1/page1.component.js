@@ -1,10 +1,24 @@
-﻿export class Page1Controller{
+﻿import CounterActions from '../reducers/counter.actions';
+
+export class Page1Controller{
     /*@ngInject*/
     constructor() {
+        this.value = 'xxxx';
+        this.unsubscribe = $ngRedux.connect(this.mapStateToThis, CounterActions)(this);      
     }
 	    
     $onInit() {
     }
+
+    $onDestroy(){
+        this.unsubscribe();
+    }    
+
+    mapStateToThis(state) {
+        return {
+            value: state.counter
+        };
+    }    
 }
 
 const Page1 = {

@@ -1,3 +1,10 @@
 ﻿<p>
-    page1 works !
+    Page 1 / {{$ctrl.value}}
+    <div>
+        <button ng-click="$ctrl.decrement()">-1</button>
+        <button ng-click="$ctrl.increment()">+1</button>
+    </div>
+    <div>
+        <a ui-sref="page2">Page 2</a>
+    </div>
 </p>
