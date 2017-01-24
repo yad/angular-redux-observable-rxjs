@@ -1,4 +1,5 @@
 ﻿import CounterActions from '../reducers/counter.actions';
+import { CounterMessage } from '../reducers/counter';
 import { incrementBySecond } from '../reducers/counter.epics';
 
 export class Page1Controller{
@@ -7,8 +8,8 @@ export class Page1Controller{
         this.value = 'xxxx';
         this.unsubscribe = $ngRedux.connect(this.mapStateToThis, CounterActions)(this);      
 
-        setTimeout(() => $ngRedux.dispatch({type: 'USER_START'}), 2000);
-        setTimeout(() => $ngRedux.dispatch({type: 'USER_STOP'}), 10000);
+        setTimeout(() => $ngRedux.dispatch({ type: CounterMessage.USER_START }), 2000);
+        setTimeout(() => $ngRedux.dispatch({ type: CounterMessage.USER_STOP }), 10000);
     }
 	    
     $onInit() {
