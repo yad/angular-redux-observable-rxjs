@@ -2,15 +2,13 @@ import { CounterOperations } from './Counter';
 
 function increment(){  
     return {
-        type: CounterOperations.INCREMENT,
-        payload: {}
+        type: CounterOperations.INCREMENT
     }
 }
 
 function decrement(){  
     return {
-        type: CounterOperations.DECREMENT,
-        payload: {}
+        type: CounterOperations.DECREMENT
     };
 }
 
