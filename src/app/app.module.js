@@ -9,7 +9,10 @@ let customDependencies = [];
 //--------------- YOU CAN EDIT CUSTOM DEPENDENCIES HERE ---------------
 customDependencies.push('ui.router');
 customDependencies.push('ngRedux');
-import { RootReducer } from './reducers';
+
+import { RootEpic, RootReducer } from './reducers';
+import { applyMiddleware } from 'redux';
+import { createEpicMiddleware } from 'redux-observable';
 
 //---------------------------------------------------------------------
 
@@ -35,5 +38,6 @@ appModule.config(($stateProvider, $urlRouterProvider, $ngReduxProvider) => {
 
     $urlRouterProvider.otherwise("/");
 
-    $ngReduxProvider.createStoreWith(RootReducer);
+    const epicMiddleware = createEpicMiddleware(RootEpic);
+    $ngReduxProvider.createStoreWith(RootReducer, [epicMiddleware]);
 });
