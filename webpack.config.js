@@ -27,7 +27,7 @@ const common = {
     },
     entry: {
         index: './src/app/app.module.js',
-        vendor: ['angular', 'angular-ui-router', 'ocLazyLoad', 'redux', 'ng-redux']
+        vendor: ['angular', 'angular-ui-router', 'ocLazyLoad', 'redux', 'ng-redux', 'redux-observable', 'rxjs']
     },
     output: {
         path: PATHS.build,
