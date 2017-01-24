@@ -1,4 +1,4 @@
-import { CounterOperations } from './Counter';
+import { CounterOperations } from './counter';
 
 function increment(){  
     return {
